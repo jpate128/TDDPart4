@@ -28,6 +28,10 @@ class Invoice:
         total_pure_price = self.totalImpurePrice(products) - self.totalDiscount(products)
         return total_pure_price
         
+    def percentDiscount(self, products):
+        percent_discount = self.totalDiscount(products) * 100 / self.totalPurePrice(products)
+        return percent_discount
+    
     def inputAnswer(self, input_value):
         while True:
             userInput = input(input_value)
@@ -44,4 +48,4 @@ class Invoice:
                 continue
             else:
                 return userInput
-                
+         

@@ -12,6 +12,7 @@ def products():
     products = {'Pen': {'qnt': 10, 'unit_price': 3.75, 'discount': 5},
                 'Notebook': {'qnt': 5, 'unit_price': 7.5, 'discount': 10}}
     return products
+    
 
 def test_CanCalcucalateTotalImpurePrice(invoice, products):
     invoice.totalImpurePrice(products)
@@ -24,4 +25,9 @@ def test_CanCalcucateTotalDiscount(invoice, products):
 def test_CanCalcucalateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+def test_CanCalcucalatePercentDiscount(invoice, products):
+    invoice.percentDiscount(products)
+    assert invoice.percentDiscount(products) == 8.100317094263477
+
 
