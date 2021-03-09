@@ -48,4 +48,20 @@ class Invoice:
                 continue
             else:
                 return userInput
+            
+    # JayPatel- This adds the total amount of tax together
+    def addTotalTax (self, products):
+        sales_tax = float(0.0475 * self.totalPurePrice(products))
+        total_sales_tax = round(sales_tax, 2)
+        county_tax = float(0.02 * self.totalPurePrice(products))
+        total_county_tax = round(county_tax, 2)
+        total_tax = total_sales_tax + total_county_tax
+        self.total_tax = round(total_tax, 2)
+        return self.total_tax
+
+
+    # Jay Patel- This adds the total amount of price with tax together
+    def calculateTotalTax(self, products):
+        total_sale = self.totalPurePrice(products) + self.addTotalTax(products)
+        return total_sale
          
