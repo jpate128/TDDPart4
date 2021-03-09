@@ -30,4 +30,13 @@ def test_CanCalcucalatePercentDiscount(invoice, products):
     invoice.percentDiscount(products)
     assert invoice.percentDiscount(products) == 8.100317094263477
 
+# Jaypatel- This is test for making sure that tax amount adds up correctly.
+def test_addTotalTax(invoice, products):
+    invoice.addTotalTax(products)
+    assert invoice.addTotalTax(products) == 4.69
+
+# Jaypatel- This is test for making sure that the total amount with tax is displayed correcly.
+def test_canCalculateTax (invoice, products):
+    invoice.calculateTotalTax(products)
+    assert invoice.calculateTotalTax(products) == 74.07
 
